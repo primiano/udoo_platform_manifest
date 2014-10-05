@@ -329,5 +329,6 @@
   <project remote="aosp" path="system/media" name="platform/system/media" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="system/security" name="platform/system/security" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="tools/external/fat32lib" name="platform/tools/external/fat32lib" revision="refs/tags/android-4.3_r2.1" />
-  <project remote="aosp" path="sdk" name="platform/sdk" revision="refs/tags/android-4.3_r2.1" />
+  <project remote="aosp" path="prebuilts/sdk" name="platform/prebuilts/sdk" revision="refs/tags/android-4.3_r2.1" />
+  <project remote="aosp" path="prebuilts/ndk" name="platform/prebuilts/ndk" revision="refs/tags/android-4.3_r2.1" />
 </manifest>
