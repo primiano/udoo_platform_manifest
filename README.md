@@ -34,3 +34,4 @@ In order to reduce sync time and size, the following subprojects have been strip
  * /docs
  * /external/eclipse-basebuilder
  * /external/eclipse-windowbuilder
+ * /packages/apps/ES_File_Explorer *(Redistribution grants are not clear to me for this app. No license is attached)*
