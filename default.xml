@@ -324,6 +324,7 @@
   <project remote="aosp" path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="prebuilts/misc" name="platform/prebuilts/misc" revision="refs/tags/android-4.3_r2.1" />
+  <project remote="aosp" path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="prebuilts/tools" name="platform/prebuilts/tools" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="system/bluetooth" name="platform/system/bluetooth" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="system/media" name="platform/system/media" revision="refs/tags/android-4.3_r2.1" />
@@ -331,4 +332,6 @@
   <project remote="aosp" path="tools/external/fat32lib" name="platform/tools/external/fat32lib" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="prebuilts/sdk" name="platform/prebuilts/sdk" revision="refs/tags/android-4.3_r2.1" />
   <project remote="aosp" path="prebuilts/ndk" name="platform/prebuilts/ndk" revision="refs/tags/android-4.3_r2.1" />
+  <project remote="aosp" path="ndk" name="platform/ndk" revision="refs/tags/android-4.3_r2.1" />
+  <project remote="aosp" path="sdk" name="platform/sdk" revision="refs/tags/android-4.3_r2.1" />
 </manifest>
