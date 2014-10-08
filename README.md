@@ -7,6 +7,9 @@ This fork is based on [Android 4.3 Sources v2.0 (U-Boot, Kernel, File System)](h
 There are currently two branches available:
 
  * **udoo-android-4.3-v2.0**: the original image untouched.
+ * **master**: WIP (will contain fixes to the original image).
+
+If you are interested or just curious about how to create / maintain you own Android fork on GitHub take a look to this article here [http://www.primianotucci.com/blog/fork-android-on-github](http://www.primianotucci.com/blog/fork-android-on-github)
 
 
 Building
