@@ -6,9 +6,9 @@ This is essentially a proper Android manifest, pointing to git subprojects, whic
 This fork is based on [Android 4.3 Sources v2.0 (U-Boot, Kernel, File System)](http://download.udoo.org/files/Sources/UDOO_Android_4.3_Source_v2.0.tar.gz).  
 The following branches are available:
 
- * **udoo-android-4.3-v2.0**: the original image untouched.
- * **udoo-android-4.3-spdif**: the original image with changes for S/PDIF output.
- * **master**: Experimental image with S/PDIF and SATA changes (needs proper partitions on SATA).
+ * **udoo-android-4.3-v2.0**: the original image (some irrelevant projects stripped, see notes below).
+ * **udoo-android-4.3-spdif**: udoo-android-4.3-v2.0 + changes for S/PDIF output.
+ * **master**: Experimental image: udoo-android-4.3-v2.0 + S/PDIF and SATA changes (needs proper partitions on HDD).
 
 If you are interested or just curious about how to create / maintain you own Android fork on GitHub take a look to this article here [http://www.primianotucci.com/blog/fork-android-on-github](http://www.primianotucci.com/blog/fork-android-on-github)
 
@@ -70,7 +70,16 @@ Don't try to install other versions or use OpenJDK. It will just not work (at le
 
     # Find out the device for the sdcard with lsblk, e.g., /dev/sdc
     sudo OUT=$OUT ./make_sd.sh /dev/sdc
- 
+
+** SATA HDD partitions layout **
+The master branch is configured to mount /system /data and /cache from a SATA HDD rather than the sdcard.
+The expected partitions layout is defined in  [device/fsl/udoo/fstab.freescale](https://github.com/primiano/udoo_device_fsl/blob/master/udoo/fstab.freescale) as follows:
+
+    /dev/block/sda1  /data   ext4  # This partition should take all the remaining HDD space.
+    /dev/block/sda2  /cache  ext4  # This partition should be 500 MB
+    /dev/block/sda3  /system ext3  # This partition should be ~1 GB
+
+
 **Additional notes**  
 In order to reduce sync time and size, the following subprojects have been stripped out w.r.t. the original image:
 
