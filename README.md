@@ -92,3 +92,6 @@ In order to reduce sync time and size, the following subprojects have been strip
  * /external/eclipse-basebuilder
  * /external/eclipse-windowbuilder
  * /packages/apps/ES_File_Explorer *(Redistribution grants are not clear to me for this app. No license is attached)*
+
+If you want to know more about how to maintain your custom Android fork, you can read more here:  
+[www.primianotucci.com/blog/fork-android-on-github](//www.primianotucci.com/blog/fork-android-on-github)
