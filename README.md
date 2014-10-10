@@ -71,7 +71,7 @@ Don't try to install other versions or use OpenJDK. It will just not work (at le
     # Find out the device for the sdcard with lsblk, e.g., /dev/sdc
     sudo OUT=$OUT ./make_sd.sh /dev/sdc
 
-** SATA HDD partitions layout **
+**SATA HDD partitions layout**  
 The master branch is configured to mount /system /data and /cache from a SATA HDD rather than the sdcard.
 The expected partitions layout is defined in  [device/fsl/udoo/fstab.freescale](https://github.com/primiano/udoo_device_fsl/blob/master/udoo/fstab.freescale) as follows:
 
