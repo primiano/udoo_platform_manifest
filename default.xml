@@ -2,7 +2,7 @@
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com/" />
   <remote name="github" fetch="https://github.com/primiano/" />
-  <default revision="udoo-android-4.3-v2.0" remote="github" sync-j="4" />
+  <default revision="master" remote="github" sync-j="4" />
 
   <!-- Forked projects on GitHub -->
   <project path="build" name="platform_build">
