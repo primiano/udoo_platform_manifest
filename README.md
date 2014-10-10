@@ -4,10 +4,11 @@ UDOO Android manifest
 This is a repo-gitorious fork of Android for the UDOO Quad board (www.udoo.org).  
 This is essentially a proper Android manifest, pointing to git subprojects, which allows to work on a fork of the reference UDOO Android image.  
 This fork is based on [Android 4.3 Sources v2.0 (U-Boot, Kernel, File System)](http://download.udoo.org/files/Sources/UDOO_Android_4.3_Source_v2.0.tar.gz).  
-There are currently two branches available:
+The following branches are available:
 
  * **udoo-android-4.3-v2.0**: the original image untouched.
- * **master**: WIP (will contain fixes to the original image).
+ * **udoo-android-4.3-spdif**: the original image with changes for S/PDIF output.
+ * **master**: Experimental image with S/PDIF and SATA changes (needs proper partitions on SATA).
 
 If you are interested or just curious about how to create / maintain you own Android fork on GitHub take a look to this article here [http://www.primianotucci.com/blog/fork-android-on-github](http://www.primianotucci.com/blog/fork-android-on-github)
 
@@ -18,10 +19,7 @@ General rules for building Android.
 
 **Prepare the system**
 
-    sudo apt-get install git gnupg flex bison gperf build-essential zip curl libc6-dev \
-    libncurses-dev x11proto-core-dev libreadline-dev g++-multilib mingw32 tofrodos \
-    python-markdown libxml2-utils xsltproc zlib1g-dev psmisc libc6-i386 lib32stdc++6 \
-    lib32gcc1 lib32ncurses5 lib32z1 ia32-libs file apt-file liblzo2-dev uuid-dev
+    sudo apt-get install git gnupg flex bison gperf build-essential zip curl libc6-dev libncurses-dev x11proto-core-dev libreadline-dev g++-multilib mingw32 tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 ia32-libs file psmisc uuid-dev devliblzo2-dev
 
     git config --global user.name "My Name"
     git config --global user.email "my@email.com"  # These are required to repo sync
@@ -38,7 +36,6 @@ Don't try to install other versions or use OpenJDK. It will just not work (at le
     sudo mv jdk1.6.0_45 /usr/lib/jvm/java-6-sun
     export JAVA_HOME=/usr/lib/jvm/java-6-sun
     export ANDROID_JAVA_HOME=$JAVA_HOME
-    
 
 **Download repo**
 
@@ -62,8 +59,18 @@ Don't try to install other versions or use OpenJDK. It will just not work (at le
 
 **Build**
 
+    # Build the bootloader first
+    pushd .
+    cd bootable/bootloader/uboot-imx
+    popd
+    # Then the Android image
     make -j8 droid    
 
+**Flash**
+
+    # Find out the device for the sdcard with lsblk, e.g., /dev/sdc
+    sudo OUT=$OUT ./make_sd.sh /dev/sdc
+ 
 **Additional notes**  
 In order to reduce sync time and size, the following subprojects have been stripped out w.r.t. the original image:
 
