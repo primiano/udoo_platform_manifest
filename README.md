@@ -76,13 +76,17 @@ Don't try to install other versions or use OpenJDK. It will just not work (at le
     sudo OUT=$OUT ./make_sd.sh /dev/sdc
 
 **SATA HDD partitions layout**  
-The master branch is configured to mount /system /data and /cache from a SATA HDD rather than the sdcard.
+The master branch is configured to mount /data from a SATA HDD rather than the sdcard.
 The expected partitions layout is defined in  [device/fsl/udoo/fstab.freescale](https://github.com/primiano/udoo_device_fsl/blob/master/udoo/fstab.freescale) as follows:
 
-    /dev/block/sda1  /data   ext4  # This partition should take all the remaining HDD space.
-    /dev/block/sda2  /cache  ext4  # This partition should be 500 MB
-    /dev/block/sda3  /system ext3  # This partition should be ~1 GB
+    /dev/block/sda1  /data   ext4  # This partition should take all the HDD space
 
+You can prepare your HDD, on a Linux machine, as follows:
+
+    sudo cfdisk /dev/sdX  # where sdX is the name of the device that you will attach to the board
+    # Create only one Linux partition which covers all the device
+    sudo mkfs.ext4 /dev/sdX1
+    
 
 **Additional notes**  
 In order to reduce sync time and size, the following subprojects have been stripped out w.r.t. the original image:
