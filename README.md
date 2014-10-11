@@ -7,8 +7,9 @@ This fork is based on [Android 4.3 Sources v2.0 (U-Boot, Kernel, File System)](h
 The following branches are available:
 
  * **udoo-android-4.3-v2.0**: the original image (some irrelevant projects stripped, see notes below).
- * **udoo-android-4.3-spdif**: udoo-android-4.3-v2.0 + changes for S/PDIF output.
- * **master**: Experimental image: udoo-android-4.3-v2.0 + S/PDIF and SATA changes (needs proper partitions on HDD).
+ * **udoo-android-4.3-spdif**: as above + changes for S/PDIF output.
+ * **udoo-android-4.3-v2.0-with-sata**: as above + SATA suport (needs a partition on the HDD)
+ * **master**: Bleeding edge / experimental.
 
 If you are interested or just curious about how to create / maintain you own Android fork on GitHub take a look to this article here [http://www.primianotucci.com/blog/fork-android-on-github](http://www.primianotucci.com/blog/fork-android-on-github)
 
