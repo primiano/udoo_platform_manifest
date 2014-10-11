@@ -9,6 +9,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
     <copyfile src="udoo/make_sd.sh" dest="make_sd.sh" />
     <copyfile src="udoo/setup" dest="setup" />
+    <copyfile src="tools/install_build_deps.sh" dest="install_build_deps.sh" />
   </project>
   <project path="bootable/bootloader/uboot-imx" name="udoo_bootable_bootloader_uboot-imx" />
   <project path="device/fsl" name="udoo_device_fsl" />
