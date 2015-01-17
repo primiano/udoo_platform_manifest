@@ -4,6 +4,8 @@
   <remote name="github" fetch="https://github.com/primiano/" />
   <default revision="master" remote="github" sync-j="4" />
 
+  <project path="packages/apps/home_automation" name="udoo_packages_apps_home_automation" />
+
   <!-- Forked projects on GitHub -->
   <project path="build" name="udoo_platform_build">
     <copyfile src="core/root.mk" dest="Makefile" />
